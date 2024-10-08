@@ -8,22 +8,22 @@ const Tab = createBottomTabNavigator();
 
 export function BottomTabs() {
   return (
-    <Tab.Navigator>      
+    <Tab.Navigator>
       <Tab.Screen
-        options={ { headerShown: false, tabBarStyle: { display: 'none' } } }
+        options={{ headerShown: false, tabBarStyle: { display: 'none' } }}
         name="WelcomeScreen"
-        component={ WelcomeScreen } />
+        component={WelcomeScreen} />
       <Tab.Screen
-        options={ { headerShown: false, tabBarStyle: { display: 'none' } } }
+        options={{ headerShown: false, tabBarStyle: { display: 'none' } }}
         name="SignInScreen"
-        component={ SignInScreen } />
+        component={SignInScreen} />
       <Tab.Screen
-        options={ { headerShown: false, tabBarStyle: { display: 'none' } } }
+        options={{ headerShown: true, tabBarStyle: { display: 'none' } }}
         name="SignUpScreen"
-        component={ SignUpScreen } />
-        <Tab.Screen
+        component={SignUpScreen} />
+      <Tab.Screen
         name="FeedScreen"
-        component={ FeedScreen } />
+        component={FeedScreen} />
     </Tab.Navigator>
   );
 }
