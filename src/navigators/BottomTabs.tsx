@@ -10,6 +10,10 @@ export function BottomTabs() {
   return (
     <Tab.Navigator>
       <Tab.Screen
+        options={{ headerShown: true, tabBarStyle: { display: 'none' } }}
+        name="SignUpScreen"
+        component={SignUpScreen} />
+      <Tab.Screen
         options={{ headerShown: false, tabBarStyle: { display: 'none' } }}
         name="WelcomeScreen"
         component={WelcomeScreen} />
@@ -17,10 +21,7 @@ export function BottomTabs() {
         options={{ headerShown: false, tabBarStyle: { display: 'none' } }}
         name="SignInScreen"
         component={SignInScreen} />
-      <Tab.Screen
-        options={{ headerShown: true, tabBarStyle: { display: 'none' } }}
-        name="SignUpScreen"
-        component={SignUpScreen} />
+      
       <Tab.Screen
         name="FeedScreen"
         component={FeedScreen} />
