@@ -8,20 +8,20 @@ const Tab = createBottomTabNavigator();
 
 export function BottomTabs() {
   return (
-    <Tab.Navigator>      
-      <Tab.Screen
-        options={ { headerShown: false, tabBarStyle: { display: 'none' } } }
-        name="WelcomeScreen"
-        component={ WelcomeScreen } />
+    <Tab.Navigator>
       <Tab.Screen
         options={ { headerShown: false, tabBarStyle: { display: 'none' } } }
         name="SignInScreen"
         component={ SignInScreen } />
       <Tab.Screen
         options={ { headerShown: false, tabBarStyle: { display: 'none' } } }
+        name="WelcomeScreen"
+        component={ WelcomeScreen } />
+      <Tab.Screen
+        options={ { headerShown: false, tabBarStyle: { display: 'none' } } }
         name="SignUpScreen"
         component={ SignUpScreen } />
-        <Tab.Screen
+      <Tab.Screen
         name="FeedScreen"
         component={ FeedScreen } />
     </Tab.Navigator>
