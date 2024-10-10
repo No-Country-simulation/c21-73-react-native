@@ -1,64 +1,50 @@
 
-import { Image, StyleSheet, Dimensions, ScrollView, Text, View, TextInput, Button, Pressable } from 'react-native';
+import { Image, StyleSheet, Dimensions, ScrollView, Text, View, TextInput, Pressable } from 'react-native';
 
 
 const { width, height } = Dimensions.get( 'window' );
 
 export const SignInScreen = () => {
 
-
-
   return (
 
     <ScrollView style={ { flex: 1 } }>
-      <View style={ { width: width, height: height * 0.4, backgroundColor: "#111b24" } }>
+      <View style={ styles.imageContainer }>
         <Image
           source={ require( '../assets/images/petsanimated.png' ) }
-          style={ { width, height: height * 0.4 } }
+          style={ styles.image }
           resizeMode="stretch"
         />
       </View>
-      <View style={ { width, height: height * 0.6, backgroundColor: "#111b24" } }>
+      <View style={ styles.containerLogin }>
         <Text style={ styles.textStyle }>Welcome</Text>
         <TextInput
           value=""
           placeholder="Email"
-          style={ { fontSize: 15, paddingLeft: 8, marginTop: 20, backgroundColor: "#223d56", width: width * 0.8, height: 45, alignSelf: "center", borderRadius: 5, borderWidth: 0.5, borderColor: "white" } }
+          style={ styles.textinputEmail }
           placeholderTextColor="white"
         />
         <TextInput
           value=""
           placeholder="Password"
-
-          style={ { fontSize: 15, paddingLeft: 8, marginTop: 20, backgroundColor: "#223d56", width: width * 0.8, height: 45, alignSelf: "center", borderRadius: 5, borderWidth: 0.5, borderColor: "white" } }
+          style={ styles.textinputPassword }
           placeholderTextColor="white"
         />
 
 
 
-        <Text onPress={ () => console.log( "press forgot password" ) } style={ { color: "grey", marginTop: 10, paddingRight: 40, alignSelf: "flex-end" } }>Forgot Password?</Text>
+        <Text onPress={ () => console.log( "press forgot password" ) } style={ styles.textForgotPassword }>Forgot Password?</Text>
 
         <Pressable
-          style={ { justifyContent: "center", backgroundColor: "#2196f4", height: 38, width: width * 0.4, borderRadius: 3, overflow: "hidden", marginTop: 20, alignSelf: "center", alignItems: "center" } }
+          style={ styles.buttonLogin }
           onPress={ () => console.log( "press login" ) }
         >
           <Text style={ { color: "white", fontWeight: "bold", fontSize: 14 } }>LOGIN</Text>
         </Pressable>
-        <Text style={ { color: "grey", marginTop: 15, alignSelf: "center" } }>or</Text>
+        <Text style={ styles.textOR }>or</Text>
 
         <Pressable
-          style={ {
-            flexDirection: "row",
-            justifyContent: "center",
-            alignItems: "center",
-            backgroundColor: "#2196f4",
-            height: 38,
-            width: width * 0.45,
-            borderRadius: 3,
-            overflow: "hidden",
-            marginTop: 20,
-            alignSelf: "center",
-          } }
+          style={ styles.buttonGmail }
           onPress={ () => console.log( "press login" ) }
         >
           <Image
@@ -69,7 +55,7 @@ export const SignInScreen = () => {
           <Text style={ { color: "white", fontWeight: "bold", fontSize: 14 } }>LOGIN WITH GMAIL</Text>
         </Pressable>
 
-        <Text onPress={ () => console.log( "press dont have account" ) } style={ { color: "white", marginTop: 10, alignSelf: "center" } }>Don't have account?</Text>
+        <Text onPress={ () => console.log( "press dont have account" ) } style={ styles.textRegister }>Don't have account?</Text>
       </View>
     </ScrollView>
   );
@@ -80,11 +66,85 @@ const styles = StyleSheet.create( {
     flex: 1,
     // backgroundColor: "#111b24"
   },
+  imageContainer: {
+    width: width,
+    height: height * 0.4,
+  },
+  image: {
+    width: "100%",
+    height: "100%"
+  },
+  containerLogin: {
+    width, height: height * 0.6, backgroundColor: "#111b24"
+  },
   textStyle: {
     color: "#fbffff",
     fontSize: 38,
-    marginTop: 20,
+    marginTop: height * 0.01,
     alignSelf: "center"
   },
+  textinputEmail: {
+    fontSize: 15,
+    paddingLeft: 8,
+    marginTop: height * 0.04,
+    backgroundColor: "#223d56",
+    width: width * 0.8,
+    height: 45,
+    alignSelf: "center",
+    borderRadius: 5,
+    borderWidth: 0.5,
+    borderColor: "white"
+  },
+  textinputPassword: {
+    fontSize: 15,
+    paddingLeft: 8,
+    marginTop: height * 0.02,
+    backgroundColor: "#223d56",
+    width: width * 0.8,
+    height: 45,
+    alignSelf: "center",
+    borderRadius: 5,
+    borderWidth: 0.5,
+    borderColor: "white"
+  },
+  textForgotPassword: {
+    color: "grey",
+    marginTop: height * 0.01,
+    paddingRight: width * 0.1,
+    alignSelf: "flex-end"
+  },
+  buttonLogin: {
+    justifyContent: "center",
+    backgroundColor: "#2196f4",
+    height: 38,
+    width: width * 0.4,
+    borderRadius: 3,
+    overflow: "hidden",
+    marginTop: height * 0.04,
+    alignSelf: "center",
+    alignItems: "center"
+  },
+  textOR: {
+    color: "grey",
+    marginTop: 15,
+    alignSelf: "center"
+  },
+  buttonGmail: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#2196f4",
+    height: 38,
+    width: width * 0.5,
+    borderRadius: 3,
+    overflow: "hidden",
+    marginTop: height * 0.025,
+    alignSelf: "center",
+  },
+  textRegister: {
+    color: "white",
+    marginTop: height*0.01,
+    alignSelf: "center"
+  }
 
 } );
