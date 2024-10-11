@@ -143,8 +143,8 @@ const styles = StyleSheet.create( {
   },
   textRegister: {
     color: "white",
-    marginTop: height*0.01,
-    alignSelf: "center"
+    marginTop: height*0.005,    
+    alignSelf: "center",
   }
 
 } );
