@@ -4,7 +4,14 @@ import { SignInScreen } from '../screens/SignInScreen';
 import { SignUpScreen } from '../screens/SignUpScreen';
 import { FeedScreen } from '../screens/FeedScreen';
 
-const Tab = createBottomTabNavigator();
+export type RootStackParamList = {
+  WelcomeScreen: undefined;
+  SignInScreen: undefined;
+  SignUpScreen: undefined;
+  FeedScreen: undefined;  
+};
+
+const Tab = createBottomTabNavigator<RootStackParamList>();
 
 export function BottomTabs() {
   return (

@@ -1,10 +1,14 @@
 
+import { NavigationProp, useNavigation } from '@react-navigation/native';
 import { Image, StyleSheet, Dimensions, ScrollView, Text, View, TextInput, Pressable } from 'react-native';
+import { RootStackParamList } from '../navigators/BottomTabs';
 
 
 const { width, height } = Dimensions.get( 'window' );
 
 export const SignInScreen = () => {
+
+  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
   return (
 
@@ -37,7 +41,7 @@ export const SignInScreen = () => {
 
         <Pressable
           style={ styles.buttonLogin }
-          onPress={ () => console.log( "press login" ) }
+          onPress={ () => navigation.navigate( 'FeedScreen') }
         >
           <Text style={ { color: "white", fontWeight: "bold", fontSize: 14 } }>LOGIN</Text>
         </Pressable>
@@ -45,7 +49,7 @@ export const SignInScreen = () => {
 
         <Pressable
           style={ styles.buttonGmail }
-          onPress={ () => console.log( "press login" ) }
+          onPress={ () => navigation.navigate( 'FeedScreen') }
         >
           <Image
             source={ require( '../assets/images/icongmail.png' ) }
@@ -55,7 +59,7 @@ export const SignInScreen = () => {
           <Text style={ { color: "white", fontWeight: "bold", fontSize: 14 } }>LOGIN WITH GMAIL</Text>
         </Pressable>
 
-        <Text onPress={ () => console.log( "press dont have account" ) } style={ styles.textRegister }>Don't have account?</Text>
+        <Text onPress={ () => navigation.navigate( 'SignUpScreen') } style={ styles.textRegister }>Don't have account?</Text>
       </View>
     </ScrollView>
   );

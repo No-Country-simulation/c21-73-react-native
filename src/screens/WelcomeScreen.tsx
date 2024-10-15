@@ -1,8 +1,11 @@
 
+import { NavigationProp, useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { useRef, useState } from 'react';
 import { Text,Image, View, FlatList,StyleSheet ,useWindowDimensions, Animated,TouchableOpacity} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { SignInScreen } from './SignInScreen';
+import { RootStackParamList } from '../navigators/BottomTabs';
 
 const data = [
   { key: '1', text: 'Welcome to the app!',img:require('../images/Doggy.png') },
@@ -18,6 +21,7 @@ export const WelcomeScreen = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const flatListRef = useRef<FlatList<any>>(null);
   const scrollX = useRef(new Animated.Value(0)).current;
+  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
   const onViewRef = useRef(({ viewableItems }: any) => {
     if (viewableItems.length > 0) {
@@ -73,7 +77,7 @@ export const WelcomeScreen = () => {
      
        {currentIndex === data.length - 1 ? (
         <Animated.View style={[styles.continueButton, { opacity: scrollX }]}>
-        <TouchableOpacity >
+        <TouchableOpacity onPress={() => navigation.navigate('SignInScreen')} >
           <Text style={styles.continueText}>Continuar</Text>
         </TouchableOpacity>
         </Animated.View>
