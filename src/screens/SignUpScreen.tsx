@@ -57,10 +57,6 @@ export const SignUpScreen = () => {
           <Button
             title="Register"
           />
-          <Text style={{textAlign: 'center', margin: 10, color: 'grey'}}>or</Text>
-          <Button
-            title="Register with Google"
-          />
           <Text style={{color: 'lightblue', textAlign:'center', margin: 15}}>Login</Text>
         </View>
       </ScrollView>
