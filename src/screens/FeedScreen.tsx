@@ -119,7 +119,7 @@ const styles = StyleSheet.create( {
   container: {
     flex: 1,
     padding: 16 ,
-    backgroundColor: "#121212",
+    backgroundColor: "#111b24",
   },
   filterContainer: {
     flexDirection: "row",
@@ -130,7 +130,7 @@ const styles = StyleSheet.create( {
   filterButton: {
     padding: 10,
     borderRadius: 20,
-    backgroundColor: "#1e1e1e",
+    backgroundColor: "#223d56",
   },
   selectedButton: {
     backgroundColor: "#3a3a3a",
@@ -141,7 +141,7 @@ const styles = StyleSheet.create( {
   card: {
     flex: 1,
     margin: 8,
-    backgroundColor: "#1e1e1e",
+    backgroundColor: "#223d56",
     borderRadius: 10,
     padding: 10,
   },

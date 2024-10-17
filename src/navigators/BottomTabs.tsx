@@ -23,7 +23,7 @@ export function BottomTabs() {
     <Tab.Navigator     
     screenOptions={{
       tabBarStyle: {
-        backgroundColor: '#111b24', 
+        backgroundColor: '#223d56', 
       },
       tabBarActiveTintColor: 'white', // Color del ícono y texto activos
       tabBarInactiveTintColor: 'grey', // Color del ícono y texto inactivos
