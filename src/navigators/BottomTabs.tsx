@@ -37,7 +37,7 @@ export function BottomTabs() {
         name="SignInScreen"
         component={ SignInScreen } />
       <Tab.Screen
-        options={ { headerShown: true, tabBarStyle: { display: 'none' }, tabBarButton: () => null } }
+        options={ { headerShown: false, tabBarStyle: { display: 'none' }, tabBarButton: () => null } }
         name="SignUpScreen"
         component={ SignUpScreen } />
       <Tab.Screen
