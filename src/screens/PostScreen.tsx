@@ -45,7 +45,7 @@ export const PostScreen = () => {
       <View style={ styles.containerPicker }>
         <Picker style={ styles.picker }>
           { provincias.map( provincia => (
-            <Picker.Item label={ provincia.label } value={ provincia.value } />
+            <Picker.Item key = {provincia.value} label={ provincia.label } value={ provincia.value } />
           ) ) }
         </Picker>
       </View>
