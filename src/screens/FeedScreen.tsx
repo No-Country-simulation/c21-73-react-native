@@ -65,8 +65,7 @@ const DATA: Pet[] = [
   },
 ];
 
-export const FeedScreen = () => {
-  const {top} = useSafeAreaInsets();
+export const FeedScreen = () => {  
   const [ selectedType, setSelectedType ] = useState<string>( "All" );
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
   const filterData = () => {
@@ -118,13 +117,14 @@ export const FeedScreen = () => {
 const styles = StyleSheet.create( {
   container: {
     flex: 1,
-    padding: 16 ,
+    padding: 1 ,
+    paddingTop:15,
     backgroundColor: "#111b24",
   },
   filterContainer: {
     flexDirection: "row",
     justifyContent: "space-around",
-    marginBottom: 16,
+    marginBottom: 5,
     marginTop:10,
   },
   filterButton: {
