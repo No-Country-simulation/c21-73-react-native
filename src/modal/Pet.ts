@@ -5,4 +5,5 @@ export interface Pet {
   breed: string;
   type: string;
   image: string;
+  //Ubicacion, Descripción, 
 }
