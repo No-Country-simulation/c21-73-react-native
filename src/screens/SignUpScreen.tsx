@@ -3,7 +3,7 @@ import { NavigationProp, useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
 import { SafeAreaView, Text, TextInput, View, StyleSheet, ScrollView, Button, Image, Dimensions } from 'react-native';
 import { RootStackParamList } from '../navigators/BottomTabs';
-import db from '../services/firebase/config'
+import {db} from '../services/firebase/config'
 import { collection, addDoc } from "firebase/firestore";
 
 const { width, height } = Dimensions.get( 'window' );
@@ -32,7 +32,6 @@ export const SignUpScreen = () => {
         console.error('Please, complete all the data')
       }
     }
-  }
 
   return (
     <SafeAreaView style={ styles.principal }>
