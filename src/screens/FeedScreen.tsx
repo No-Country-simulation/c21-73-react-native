@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
   Pressable,
 } from "react-native";
-import { Pet } from '../modal/Pet';
+import { Pet } from '../modal/Post';
 import { NavigationProp, useNavigation } from '@react-navigation/native';
 import { RootStackParamList } from '../navigators/BottomTabs';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
