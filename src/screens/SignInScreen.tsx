@@ -97,7 +97,7 @@ const styles = StyleSheet.create( {
     alignSelf: "center",
     borderRadius: 5,
     borderWidth: 0.5,
-    borderColor: "white"
+    borderColor: "gray"
   },
   textinputPassword: {
     fontSize: 15,
@@ -109,7 +109,7 @@ const styles = StyleSheet.create( {
     alignSelf: "center",
     borderRadius: 5,
     borderWidth: 0.5,
-    borderColor: "white"
+    borderColor: "gray"
   },
   textForgotPassword: {
     color: "grey",
