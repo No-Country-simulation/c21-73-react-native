@@ -25,7 +25,8 @@ export const SignUpScreen = () => {
           email: user.email,
           password: user.password,
           province: user.province,
-          phoneNumber: user.phoneNumber
+          phoneNumber: user.phoneNumber,
+          posts: []
         });
         console.log("Document written with ID: ", userRef.id);
       } catch (error) {
