@@ -4,8 +4,7 @@ export interface Post {
   age: string;
   diseases:string;
   breed: string;
-  type: string;
-  image: string;
+  type: string;  
   location:string;
   vaccines:string;
   description:string;
