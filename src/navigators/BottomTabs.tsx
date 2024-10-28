@@ -4,7 +4,7 @@ import { SignInScreen } from '../screens/SignInScreen';
 import { SignUpScreen } from '../screens/SignUpScreen';
 import { FeedScreen } from '../screens/FeedScreen';
 import { DetailsPetsScreen } from '../screens/DetailsPetsScreen';
-import { Pet } from '../modal/Pet';
+import { Post } from '../modal/Post';
 import { PostScreen } from '../screens/PostScreen';
 import { Ionicons } from '@expo/vector-icons';
 import { Dimensions } from 'react-native';
@@ -15,7 +15,7 @@ export type RootStackParamList = {
   SignUpScreen: undefined;
   FeedScreen: undefined;
   PostScreen: undefined;
-  DetailsPetsScreen: { pet: Pet; };
+  DetailsPetsScreen: { pet: Post; };
 };
 
 const Tab = createBottomTabNavigator<RootStackParamList>();

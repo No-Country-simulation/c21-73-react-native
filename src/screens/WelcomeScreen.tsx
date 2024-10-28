@@ -4,7 +4,6 @@ import React from 'react';
 import { useRef, useState } from 'react';
 import { Text,Image, View, FlatList,StyleSheet ,useWindowDimensions, Animated,TouchableOpacity} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { SignInScreen } from './SignInScreen';
 import { RootStackParamList } from '../navigators/BottomTabs';
 
 const data = [

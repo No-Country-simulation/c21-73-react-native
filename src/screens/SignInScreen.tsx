@@ -14,14 +14,26 @@ export const SignInScreen = () => {
 
     <ScrollView style={ { flex: 1 } }>
       <View style={ styles.imageContainer }>
-        <Image
-          source={ require( '../assets/images/petsanimated.png' ) }
-          style={ styles.image }
-          resizeMode="stretch"
-        />
+        <View style={ { flexDirection: 'row', alignItems: 'center',paddingTop:35 } }>
+          <Text style={ {
+            fontSize: 45,
+            fontFamily: "FugazOne",
+            color: "#2196f4",
+            textShadowColor: "rgba(0, 0, 0, 0.2)",
+            textShadowOffset: { width: 1, height: 1 },
+            textShadowRadius: 1,
+            paddingTop:15,
+          } }>
+            PawMatch
+          </Text>
+          <Image
+            source={ require( '../assets/images/23.png' ) }
+            style={ { width: 80, height: 100 } } // Ajusta el tamaño según necesites
+            resizeMode="contain"
+          />
+        </View>
       </View>
       <View style={ styles.containerLogin }>
-        <Text style={ styles.textStyle }>Welcome</Text>
         <TextInput
           value=""
           placeholder="Email"
@@ -37,11 +49,11 @@ export const SignInScreen = () => {
 
 
 
-        <Text onPress={ () => console.log( "press forgot password" ) } style={ styles.textForgotPassword }>Forgot Password?</Text>
+        <Text onPress={ () => console.log( "press forgot password" ) } style={ styles.textForgotPassword }>Olvidaste contraseña?</Text>
 
         <Pressable
           style={ styles.buttonLogin }
-          onPress={ () => navigation.navigate( 'FeedScreen') }
+          onPress={ () => navigation.navigate( 'FeedScreen' ) }
         >
           <Text style={ { color: "white", fontWeight: "bold", fontSize: 14 } }>LOGIN</Text>
         </Pressable>
@@ -49,7 +61,7 @@ export const SignInScreen = () => {
 
         <Pressable
           style={ styles.buttonGmail }
-          onPress={ () => navigation.navigate( 'FeedScreen') }
+          onPress={ () => navigation.navigate( 'FeedScreen' ) }
         >
           <Image
             source={ require( '../assets/images/icongmail.png' ) }
@@ -59,7 +71,7 @@ export const SignInScreen = () => {
           <Text style={ { color: "white", fontWeight: "bold", fontSize: 14 } }>LOGIN WITH GMAIL</Text>
         </Pressable>
 
-        <Text onPress={ () => navigation.navigate( 'SignUpScreen') } style={ styles.textRegister }>Don't have account?</Text>
+        <Text onPress={ () => navigation.navigate( 'SignUpScreen' ) } style={ styles.textRegister }>No tenes cuenta?</Text>
       </View>
     </ScrollView>
   );
@@ -71,15 +83,18 @@ const styles = StyleSheet.create( {
     // backgroundColor: "#111b24"
   },
   imageContainer: {
+    backgroundColor: "#111b24",
     width: width,
-    height: height * 0.4,
+    height: height * 0.3,
+    justifyContent: "center",
+    alignItems: "center"
   },
   image: {
     width: "100%",
     height: "100%"
   },
   containerLogin: {
-    width, height: height * 0.6, backgroundColor: "#111b24"
+    width, height: height * 0.7, backgroundColor: "#111b24"
   },
   textStyle: {
     color: "#fbffff",
@@ -90,26 +105,26 @@ const styles = StyleSheet.create( {
   textinputEmail: {
     fontSize: 15,
     paddingLeft: 8,
-    marginTop: height * 0.04,
+    marginTop: height * 0.03,
     backgroundColor: "#223d56",
     width: width * 0.8,
     height: 45,
     alignSelf: "center",
     borderRadius: 5,
     borderWidth: 0.5,
-    borderColor: "white"
+    borderColor: "gray"
   },
   textinputPassword: {
     fontSize: 15,
     paddingLeft: 8,
-    marginTop: height * 0.02,
+    marginTop: height * 0.05,
     backgroundColor: "#223d56",
     width: width * 0.8,
     height: 45,
     alignSelf: "center",
     borderRadius: 5,
     borderWidth: 0.5,
-    borderColor: "white"
+    borderColor: "gray"
   },
   textForgotPassword: {
     color: "grey",
@@ -124,7 +139,7 @@ const styles = StyleSheet.create( {
     width: width * 0.4,
     borderRadius: 3,
     overflow: "hidden",
-    marginTop: height * 0.04,
+    marginTop: height * 0.05,
     alignSelf: "center",
     alignItems: "center"
   },
@@ -147,7 +162,7 @@ const styles = StyleSheet.create( {
   },
   textRegister: {
     color: "white",
-    marginTop: height*0.005,    
+    marginTop: height * 0.01,
     alignSelf: "center",
   }
 
