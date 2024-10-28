@@ -7,112 +7,131 @@ import { db } from '../services/firebase/config';
 import { collection, addDoc } from "firebase/firestore";
 import { PROVINCIAS } from '../helpers/Provinces';
 
-const { width, height } = Dimensions.get( 'window' );
+const { width, height } = Dimensions.get('window');
 
 export const SignUpScreen = () => {
-  const [ user, setUser ] = useState( { name: '', lastName: '', email: '', password: '', province: '', phoneNumber: '' } );
-  const [ provincias ] = useState( PROVINCIAS );
-  const [ selectProvince, setProvinceSelected ] = useState<string>( provincias[ 0 ].value );
+  const [user, setUser] = useState({ name: '', lastName: '', email: '', password: '', province: '', phoneNumber: '' });
+  const [provincias] = useState(PROVINCIAS);
+  const [selectProvince, setProvinceSelected] = useState<string>(provincias[0].value);
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
 
-  const handleChangeText = ( name: string, value: string ) => {
-    setUser( { ...user, [ name ]: value } );
+  const handleChangeText = (name: string, value: string) => {
+    setUser({ ...user, [name]: value });
   };
 
   const createNewUser = async () => {
     try {
-      const userRef = await addDoc( collection( db, "users" ), {
+      const userRef = await addDoc(collection(db, "users"), {
         name: user.name,
         lastName: user.lastName,
         email: user.email,
         password: user.password,
         province: user.province,
         phoneNumber: user.phoneNumber
-      } );
-      console.log( "Document written with ID: ", userRef.id );
-    } catch ( error ) {
-      console.error( 'Please, complete all the data' );
+      });
+      console.log("Document written with ID: ", userRef.id);
+    } catch (error) {
+      console.error('Please, complete all the data');
     }
   };
 
+  // Variable de estado para la visibilidad de la contraseña
+  const [showPassword, setShowPassword] = useState(false);
+
   return (
-    <SafeAreaView style={ styles.principal }>
+    <SafeAreaView style={styles.principal}>
       <ScrollView>
-        <Image
-          source={ require( '../assets/mascotas.png' ) }
-          style={ { height: height * 0.4, width: width } }
-        />
-        <Text style={ styles.title }>Registrarse</Text>
+        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', paddingTop: 35 }}>
+          <Text style={{
+            fontSize: 45,
+            fontFamily: "FugazOne",
+            color: "#2196f4",
+            textShadowColor: "rgba(0, 0, 0, 0.2)",
+            textShadowOffset: { width: 1, height: 1 },
+            textShadowRadius: 1,
+            paddingTop: 15,
+          }}>
+            PawMatch
+          </Text>
+          <Image
+            source={require('../assets/images/23.png')}
+            style={{ width: 100, height: 100 }} // Ajusta el tamaño según necesites
+            resizeMode="contain"
+          />
+        </View>
+        <Text style={styles.title}>Registrarse</Text>
         <TextInput
           placeholder='Nombre'
-          placeholderTextColor={ '#ffffff' }
-          style={ styles.input }
-          onChangeText={ ( value ) => handleChangeText( 'name', value ) }
+          placeholderTextColor={'#ffffff'}
+          style={styles.input}
+          onChangeText={(value) => handleChangeText('name', value)}
         />
         <TextInput
           placeholder='Apellido'
-          placeholderTextColor={ '#ffffff' }
-          style={ styles.input }
-          onChangeText={ ( value ) => handleChangeText( 'lastName', value ) }
+          placeholderTextColor={'#ffffff'}
+          style={styles.input}
+          onChangeText={(value) => handleChangeText('lastName', value)}
         />
         <TextInput
           placeholder='Correo electrónico'
-          placeholderTextColor={ '#ffffff' }
-          style={ styles.input }
+          placeholderTextColor={'#ffffff'}
+          style={styles.input}
           keyboardType="email-address"
-          onChangeText={ ( value ) => handleChangeText( 'email', value ) }
+          onChangeText={(value) => handleChangeText('email', value)}
         />
         <TextInput
           placeholder='Contraseña'
-          placeholderTextColor={ '#ffffff' }
-          style={ styles.input }
-          onChangeText={ ( value ) => handleChangeText( 'password', value ) }
+          placeholderTextColor={'#ffffff'}
+          style={styles.input}
+          onChangeText={(value) => handleChangeText('password', value)}
+          secureTextEntry={!showPassword}
         />
         <TextInput
           placeholder='Repetir contraseña'
-          placeholderTextColor={ '#ffffff' }
-          style={ styles.input }
-          textContentType='password'
+          placeholderTextColor={'#ffffff'}
+          style={styles.input}
+          secureTextEntry={!showPassword}
         />
-        <Text style={ styles.text }>Province:</Text>
-        <View style={ styles.containerPicker }>
+        <Text style={styles.text}>Province:</Text>
+        <View style={styles.containerPicker}>
           <Picker
-            style={ styles.picker }
-            selectedValue={ selectProvince }
-            onValueChange={ ( itemValue ) => {
-              setProvinceSelected( itemValue );
-            } }
+            style={styles.picker}
+            selectedValue={selectProvince}
+            onValueChange={(itemValue) => {
+              setProvinceSelected(itemValue);
+            }}
           >
-            { provincias.map( provincia => (
-              <Picker.Item key={ provincia.value } label={ provincia.label } value={ provincia.value } />
-            ) ) }
+            {provincias.map(provincia => (
+              <Picker.Item key={provincia.value} label={provincia.label} value={provincia.value} />
+            ))}
           </Picker>
         </View>
         <TextInput
           placeholder='Número de teléfono'
-          placeholderTextColor={ '#ffffff' }
-          style={ styles.input }
+          placeholderTextColor={'#ffffff'}
+          style={styles.input}
           keyboardType="phone-pad"
-          onChangeText={ ( value ) => handleChangeText( 'phoneNumber', value ) }
+          onChangeText={(value) => handleChangeText('phoneNumber', value)}
         />
-        <View style={ styles.buttonsGroup }>
+        <View style={styles.buttonsGroup}>
           <Button
             title="Register"
-            onPress={ () => createNewUser() }
+            onPress={() => createNewUser()}
+
           />
-          <Text style={ { textAlign: 'center', margin: 10, color: 'grey' } }>or</Text>
+          <Text style={{ textAlign: 'center', margin: 10, color: 'grey' }}>or</Text>
           <Button
             title="Register with Google"
           />
-          <Text onPress={ () => navigation.navigate( 'SignInScreen' ) } style={ { color: 'lightblue', textAlign: 'center', margin: 15 } }>Login</Text>
+          <Text onPress={() => navigation.navigate('SignInScreen')} style={{ color: 'lightblue', textAlign: 'center', margin: 15 }}>Login</Text>
         </View>
       </ScrollView>
     </SafeAreaView>
   );
 };
 
-const styles = StyleSheet.create( {
+const styles = StyleSheet.create({
   principal: {
     backgroundColor: '#111b24',
     flex: 1,
@@ -140,7 +159,7 @@ const styles = StyleSheet.create( {
     margin: 10,
     padding: 10,
     borderRadius: 5,
-
+    color: '#ffffff'
   },
   placeholder: {
     color: '#223d56'
@@ -166,4 +185,4 @@ const styles = StyleSheet.create( {
     alignContent: 'center',
     justifyContent: 'center',
   }
-} );
+});
