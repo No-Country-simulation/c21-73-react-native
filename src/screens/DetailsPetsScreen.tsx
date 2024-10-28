@@ -59,19 +59,19 @@ export const DetailsPetsScreen = () => {
         pagingEnabled
         showsHorizontalScrollIndicator={ true }
       />
-      <Text style={ styles.titleInfo }>Breed</Text>
+      <Text style={ styles.titleInfo }>Raza</Text>
       <View style={ styles.separator }></View>
       <Text style={ styles.textDetails }>{ pet.breed }</Text>
-      <Text style={ styles.titleInfo }>Age</Text>
+      <Text style={ styles.titleInfo }>Edad</Text>
       <View style={ styles.separator }></View>
       <Text style={ styles.textDetails }> { pet.age }</Text>
-      <Text style={ styles.titleInfo }>Description</Text>
+      <Text style={ styles.titleInfo }>Descripcion</Text>
       <View style={ styles.separator }></View>
       <Text style={ styles.textDetails }> { pet.description }</Text>
-      <Text style={ styles.titleInfo }>Vaccines</Text>
+      <Text style={ styles.titleInfo }>Vacunas</Text>
       <View style={ styles.separator }></View>
       <Text style={ styles.textDetails }> { pet.vaccines }</Text>
-      <Text style={ styles.titleInfo }>Diseases</Text>
+      <Text style={ styles.titleInfo }>Enfermedades</Text>
       <View style={ styles.separator }></View>
       <Text style={ styles.textDetails }> { pet.diseases }</Text>
       <Pressable

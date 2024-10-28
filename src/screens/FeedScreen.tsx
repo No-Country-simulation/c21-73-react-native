@@ -11,7 +11,6 @@ import {
 import { Post } from '../modal/Post';
 import { NavigationProp, useNavigation } from '@react-navigation/native';
 import { RootStackParamList } from '../navigators/BottomTabs';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 
 const DATA: Post[] = [
@@ -20,7 +19,7 @@ const DATA: Post[] = [
     name: "Max",
     age: "2 años",
     breed: "Labrador",
-    type: "Dog",
+    type: "Perros",
     location: "Buenos Aires",
     description: "el nombre del perro es max, es muy cariñoso y bueno",
     images: [
@@ -37,7 +36,7 @@ const DATA: Post[] = [
     name: "Lucy",
     age: "1 años",
     breed: "Golden Retriever",
-    type: "Dog",
+    type: "Perros",
     location: "Buenos Aires",
     description: "luci es muy linda tierna y juguetona, y le encanta salir a pasear",
     images: [ "https://goldendogfarm.com/cdn/shop/files/C99G8563_2048x.jpg?v=1698182078","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJY2bMiMlpHwmOHEbgcLV5UrNTtW-tYiMRiQ&s","https://www.purina.es/sites/default/files/styles/ttt_image_510/public/2024-02/sitesdefaultfilesstylessquare_medium_440x440public2022-09golden20retriever.jpg?itok=48StbVfe" ],
@@ -49,7 +48,7 @@ const DATA: Post[] = [
     name: "Charlie",
     age: "3 años",
     breed: "Poodle",
-    type: "Dog",
+    type: "Perros",
     location: "Buenos Aires",
     description: "charlie es muy cariñoso y bueno y le gusta dormir mucho",
     images: [ "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs-BUGm4_BaiF8iXpWkMJYN9St17jpF2-q4Q&s","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkFq1uKLkAT94x558qT2FA0Ishso12q3P7Jg&s","https://www.purina.com.ar/sites/default/files/2022-10/purina-brand-que-sabes-de-los-perros-poodle.jpg" ],
@@ -61,7 +60,7 @@ const DATA: Post[] = [
     name: "Luna",
     age: "5 meses",
     breed: "Shiba",
-    type: "Dog",
+    type: "Perros",
     location: "Buenos Aires",
     description: "luna es tierna, aun es muy cachorrita y necesita una familia que la adopte",
     images: [ "https://kennelclubargentino.org.ar/storage/2020/05/shiba-cachorro1.jpg","https://www.lavanguardia.com/files/og_thumbnail/files/fp/uploads/2024/04/08/66141a09dbe9d.r_d.2338-1390-3106.jpeg","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRplJugLLMsJ6yUidL0rpM0xkeB9DPm2tgLow&s" ],
@@ -73,7 +72,7 @@ const DATA: Post[] = [
     name: "Mittens",
     age: "2 años",
     breed: "Siamese",
-    type: "Cat",
+    type: "Gatos",
     location: "Buenos Aires",
     description: "le encanta salir a pasear y jugar con los perros y ser acariciado por las personas",
     images: [ "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_KzoCX3jSF_WLQvOlCsANycp68a2rHFT1yQ&s","https://www.purina.es/sites/default/files/styles/ttt_image_510/public/2024-02/sitesdefaultfilesstylessquare_medium_440x440public2022-06Siamese201.jpg?itok=j9A2IvjN" ],
@@ -85,7 +84,7 @@ const DATA: Post[] = [
     name: "Coco",
     age: "6 años",
     breed: "Budgie",
-    type: "Bird",
+    type: "Pajaros",
     location: "Buenos Aires",
     description: "coco ya es un perro grande, y le encanta hacer nuevos amigos en las plazas",
     images: [ "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZT0tYrjTYvWmRCLfI-xg-6fY7x9-AAUqKnw&s","https://lafeber.com/pet-birds/wp-content/uploads/Parakeet-Category-Image-300x300.jpg" ],
@@ -95,10 +94,10 @@ const DATA: Post[] = [
 ];
 
 export const FeedScreen = () => {
-  const [ selectedType, setSelectedType ] = useState<string>( "All" );
+  const [ selectedType, setSelectedType ] = useState<string>( "Todos" );
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
   const filterData = () => {
-    return selectedType === "All"
+    return selectedType === "Todos"
       ? DATA
       : DATA.filter( ( pet ) => pet.type === selectedType );
   };
@@ -116,7 +115,7 @@ export const FeedScreen = () => {
     </View>
   );
 
-  const types = [ "All", "Dog", "Cat", "Bird" ];
+  const types = [ "Todos", "Perros", "Gatos", "Pajaros" ];
 
   return (
     <View style={ styles.container }>

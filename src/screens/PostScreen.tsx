@@ -42,7 +42,7 @@ export const PostScreen = () => {
 
   useEffect( () => {
     navigation.setOptions( {
-      title: "New Post",
+      title: "Nuevo Posteo",
       headerStyle: {
         backgroundColor: '#111b24',
       },
@@ -64,13 +64,13 @@ export const PostScreen = () => {
   return (
     <ScrollView style={ { flex: 1, backgroundColor: "#111b24" } }>
 
-      <TextInput style={ styles.textInputName } placeholderTextColor="white" placeholder="Name Pet" value=""></TextInput>
+      <TextInput style={ styles.textInputName } placeholderTextColor="white" placeholder="Nombre Mascota" value=""></TextInput>
 
-      <TextInput style={ styles.textInputName } placeholderTextColor="white" placeholder="Age" value="" keyboardType="numeric"></TextInput>
+      <TextInput style={ styles.textInputName } placeholderTextColor="white" placeholder="Edad" value="" keyboardType="numeric"></TextInput>
 
-      <TextInput style={ styles.textInputName } placeholderTextColor="white" placeholder="Diseases" value=""></TextInput>
+      <TextInput style={ styles.textInputName } placeholderTextColor="white" placeholder="Enfermedades" value=""></TextInput>
 
-      <TextInput style={ styles.textInputName } placeholderTextColor="white" placeholder="Breed - N/A" value=""></TextInput>
+      <TextInput style={ styles.textInputName } placeholderTextColor="white" placeholder="Raza - N/A" value=""></TextInput>
 
       <View style={ styles.containerPicker }>
         <Picker 
@@ -86,15 +86,15 @@ export const PostScreen = () => {
         </Picker>
       </View>
 
-      <TextInput style={ styles.textInputName } placeholderTextColor="white" placeholder="Vaccines - N/A" value=""></TextInput>
+      <TextInput style={ styles.textInputName } placeholderTextColor="white" placeholder="Vacunas - N/A" value=""></TextInput>
 
-      <TextInput style={ styles.textInputDesc } multiline={ true } placeholderTextColor="white" placeholder="Description.." value=""></TextInput>
+      <TextInput style={ styles.textInputDesc } multiline={ true } placeholderTextColor="white" placeholder="Descripcion.." value=""></TextInput>
 
       <Pressable
         style={ styles.addImages }
         onPress={ () => openGallery() }
       >
-        <Text style={ { color: "white", fontWeight: "bold", fontSize: 20, alignSelf: "center" } }>Add Images +</Text>
+        <Text style={ { color: "white", fontWeight: "bold", fontSize: 20, alignSelf: "center" } }>Agregar Imagenes +</Text>
       </Pressable>
 
       {/* separador */ }
