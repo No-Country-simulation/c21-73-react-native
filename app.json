@@ -23,6 +23,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "fonts": {
+      "FugazOne": "./assets/fonts/FugazOne.ttf"
+    },
+    "plugins": [
+      "expo-font"
+    ]
   }
 }
