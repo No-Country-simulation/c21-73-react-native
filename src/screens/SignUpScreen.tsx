@@ -40,39 +40,45 @@ export const SignUpScreen = () => {
           source={ require( '../assets/mascotas.png' ) }
           style={ { height: height * 0.4, width: width } }
         />
-        <Text style={ styles.title }>Register</Text>
+        <Text style={ styles.title }>Registrarse</Text>
         <TextInput
-          placeholder='Name'
+          placeholder='Nombre'
           placeholderTextColor={ '#ffffff' }
           style={ styles.input }
           onChangeText={(value) => handleChangeText('name', value)}
+          textContentType='name'
         />
         <TextInput
-          placeholder='Last Name'
+          placeholder='Apellido'
           placeholderTextColor={ '#ffffff' }
           style={ styles.input }
           onChangeText={(value) => handleChangeText('lastName', value)}
+          textContentType='familyName'
         />
         <TextInput
-          placeholder='Email'
+          placeholder='Correo electrónico'
           placeholderTextColor={ '#ffffff' }
           style={ styles.input }
           keyboardType="email-address"
           onChangeText={(value) => handleChangeText('email', value)}
+          textContentType='emailAddress'
         />
         <TextInput
-          placeholder='Password'
+          placeholder='Contraseña'
           placeholderTextColor={ '#ffffff' }
           style={ styles.input }
           onChangeText={(value) => handleChangeText('password', value)}
+          textContentType='password'
         />
         <TextInput
-          placeholder='Repeat Password'
+          placeholder='Repetir contraseña'
           placeholderTextColor={ '#ffffff' }
           style={ styles.input }
+          textContentType='password'
         />
-        <Text style={ styles.text }>Province:</Text>
-        <Picker style={ styles.picker } /* selectedValue={provincias}
+        <Text style={ styles.text }>Provincia:</Text>
+        <Picker style={ styles.picker } 
+        /* selectedValue={provincias}
           onValueChange={(itemValue, itemIndex) =>
             setProvincias(itemValue)
           }  */>
@@ -85,20 +91,21 @@ export const SignUpScreen = () => {
         </Picker>
 
         <TextInput
-          placeholder='Phone Number'
+          placeholder='Número de teléfono'
           placeholderTextColor={ '#ffffff' }
           style={ styles.input }
           keyboardType="phone-pad"
           onChangeText={(value) => handleChangeText('phoneNumber', value)}
+          textContentType='telephoneNumber'
         />
         <View style={ styles.buttonsGroup }>
           <Button
-            title="Register"
+            title="Registrar"
             onPress={() => createNewUser()}
           />
           <Text style={ { textAlign: 'center', margin: 10, color: 'grey' } }>or</Text>
           <Button
-            title="Register with Google"
+            title="Registrar con Google"
             
           />
           <Text onPress={ () => navigation.navigate( 'SignInScreen') } style={ { color: 'lightblue', textAlign: 'center', margin: 15 } }>Login</Text>
