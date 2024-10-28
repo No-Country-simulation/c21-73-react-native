@@ -43,39 +43,39 @@ export const SignUpScreen = () => {
           source={ require( '../assets/mascotas.png' ) }
           style={ { height: height * 0.4, width: width } }
         />
-        <Text style={ styles.title }>Register</Text>
+        <Text style={ styles.title }>Registrarse</Text>
         <TextInput
-          placeholder='Name'
+          placeholder='Nombre'
           placeholderTextColor={ '#ffffff' }
           style={ styles.input }
           onChangeText={ ( value ) => handleChangeText( 'name', value ) }
         />
         <TextInput
-          placeholder='Last Name'
+          placeholder='Apellido'
           placeholderTextColor={ '#ffffff' }
           style={ styles.input }
           onChangeText={ ( value ) => handleChangeText( 'lastName', value ) }
         />
         <TextInput
-          placeholder='Email'
+          placeholder='Correo electrónico'
           placeholderTextColor={ '#ffffff' }
           style={ styles.input }
           keyboardType="email-address"
           onChangeText={ ( value ) => handleChangeText( 'email', value ) }
         />
         <TextInput
-          placeholder='Password'
+          placeholder='Contraseña'
           placeholderTextColor={ '#ffffff' }
           style={ styles.input }
           onChangeText={ ( value ) => handleChangeText( 'password', value ) }
         />
         <TextInput
-          placeholder='Repeat Password'
+          placeholder='Repetir contraseña'
           placeholderTextColor={ '#ffffff' }
           style={ styles.input }
+          textContentType='password'
         />
         <Text style={ styles.text }>Province:</Text>
-
         <View style={ styles.containerPicker }>
           <Picker
             style={ styles.picker }
@@ -89,9 +89,8 @@ export const SignUpScreen = () => {
             ) ) }
           </Picker>
         </View>
-
         <TextInput
-          placeholder='Phone Number'
+          placeholder='Número de teléfono'
           placeholderTextColor={ '#ffffff' }
           style={ styles.input }
           keyboardType="phone-pad"
@@ -105,7 +104,6 @@ export const SignUpScreen = () => {
           <Text style={ { textAlign: 'center', margin: 10, color: 'grey' } }>or</Text>
           <Button
             title="Register with Google"
-
           />
           <Text onPress={ () => navigation.navigate( 'SignInScreen' ) } style={ { color: 'lightblue', textAlign: 'center', margin: 15 } }>Login</Text>
         </View>
