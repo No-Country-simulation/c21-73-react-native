@@ -1,6 +1,6 @@
 
 import { NavigationProp, RouteProp, useFocusEffect, useNavigation, useRoute } from '@react-navigation/native';
-import { BackHandler, Text, View, Image, Dimensions, StyleSheet, ScrollView, Pressable, FlatList } from 'react-native';
+import { BackHandler, Text, View, Image, Dimensions, StyleSheet, ScrollView, Pressable, FlatList, Linking } from 'react-native';
 import { RootStackParamList } from '../navigators/BottomTabs';
 import { useEffect, useRef } from 'react';
 import React from 'react';
@@ -15,6 +15,12 @@ export const DetailsPetsScreen = () => {
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
   const flatListRef = useRef<FlatList>( null );
   const scrollViewRef = useRef<ScrollView>(null);
+
+  const handleOpenWsp = () => {
+    const phoneNumber = '+543425596432';//pasar por parametro
+    const url = `https://wa.me/${phoneNumber}`;
+    Linking.openURL(url).catch(err => console.error('Error opening WhatsApp:', err));
+  };
 
   useFocusEffect(
     React.useCallback(() => {
@@ -87,7 +93,7 @@ export const DetailsPetsScreen = () => {
           alignItems: "center",
           marginBottom: 10,
         } }
-        onPress={ () => console.log( "Formulario" ) }
+        onPress={handleOpenWsp}
       >
         <Text style={ { color: "white", fontWeight: "bold", fontSize: 14, alignSelf: "center" } }>ADOPT</Text>
       </Pressable>
