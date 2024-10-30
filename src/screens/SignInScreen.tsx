@@ -42,13 +42,10 @@ export const SignInScreen = () => {
         />
         <TextInput
           value=""
-          placeholder="Password"
+          placeholder="Contraseña"
           style={ styles.textinputPassword }
           placeholderTextColor="white"
         />
-
-
-
         <Text onPress={ () => console.log( "press forgot password" ) } style={ styles.textForgotPassword }>Olvidaste contraseña?</Text>
 
         <Pressable
