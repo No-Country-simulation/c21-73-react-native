@@ -93,7 +93,7 @@ export const SignUpScreen = () => {
           style={styles.input}
           secureTextEntry={!showPassword}
         />
-        <Text style={styles.text}>Province:</Text>
+        <Text style={styles.textSelect}>Provincia:</Text>
         <View style={styles.containerPicker}>
           <Picker
             style={styles.picker}
@@ -116,15 +116,15 @@ export const SignUpScreen = () => {
         />
         <View style={styles.buttonsGroup}>
           <Button
-            title="Register"
+            title="Registrarse"
             onPress={() => createNewUser()}
 
           />
-          <Text style={{ textAlign: 'center', margin: 10, color: 'grey' }}>or</Text>
+          <Text style={{ textAlign: 'center', margin: 10, color: 'grey' }}>ó</Text>
           <Button
-            title="Register with Google"
+            title="Registrarse con Google"
           />
-          <Text onPress={() => navigation.navigate('SignInScreen')} style={{ color: 'lightblue', textAlign: 'center', margin: 15 }}>Login</Text>
+          <Text onPress={() => navigation.navigate('SignInScreen')} style={{ color: 'lightblue', textAlign: 'center', margin: 15 }}>Iniciar Sesión</Text>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -163,6 +163,11 @@ const styles = StyleSheet.create({
   },
   placeholder: {
     color: '#223d56'
+  },
+  textSelect: {
+    color: '#ffffff',
+    marginTop: 10,
+    marginLeft: 45
   },
   containerPicker: {
     marginTop: 30,

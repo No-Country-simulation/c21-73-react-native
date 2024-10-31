@@ -52,9 +52,9 @@ export const SignInScreen = () => {
           style={ styles.buttonLogin }
           onPress={ () => navigation.navigate( 'FeedScreen' ) }
         >
-          <Text style={ { color: "white", fontWeight: "bold", fontSize: 14 } }>LOGIN</Text>
+          <Text style={ { color: "white", fontWeight: "bold", fontSize: 14 } }>INICIAR SESIÓN</Text>
         </Pressable>
-        <Text style={ styles.textOR }>or</Text>
+        <Text style={ styles.textOR }>ó</Text>
 
         <Pressable
           style={ styles.buttonGmail }
@@ -65,7 +65,7 @@ export const SignInScreen = () => {
             style={ { width: 40, height: 30, marginRight: 8 } }
             resizeMode="stretch"
           />
-          <Text style={ { color: "white", fontWeight: "bold", fontSize: 14 } }>LOGIN WITH GMAIL</Text>
+          <Text style={ { color: "white", fontWeight: "bold", fontSize: 14 } }>INICIAR SESIÓN CON GMAIL</Text>
         </Pressable>
 
         <Text onPress={ () => navigation.navigate( 'SignUpScreen' ) } style={ styles.textRegister }>No tenes cuenta?</Text>
@@ -151,7 +151,7 @@ const styles = StyleSheet.create( {
     alignItems: "center",
     backgroundColor: "#2196f4",
     height: 38,
-    width: width * 0.5,
+    width: width * 0.6,
     borderRadius: 3,
     overflow: "hidden",
     marginTop: height * 0.025,
