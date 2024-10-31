@@ -91,6 +91,30 @@ const DATA: Post[] = [
     diseases: "Tos de las perreras",
     vaccines: "Rabia-Parvovirus-Leptospirosis-Moquillo"
   },
+  {
+    id: "7",
+    name: "Moro",
+    age: "2 años",
+    breed: "Bracco",
+    type: "Perros",
+    location: "Rosario",
+    description: "Moro es un perro joven y muy activo!!",
+    images: [ "https://t1.uc.ltmcdn.com/es/posts/3/7/7/como_cuidar_de_un_braco_aleman_4773_600.webp","https://i.pinimg.com/736x/9f/ca/23/9fca237e964a828d76a5797638630f87.jpg" ],
+    diseases: "N/A",
+    vaccines: "Rabia-Parvovirus-Leptospirosis-Moquillo"
+  },
+  {
+    id: "8",
+    name: "Michi",
+    age: "1 año",
+    breed: "N/A",
+    type: "Gatos",
+    location: "San Juan",
+    description: "Michi es un gato muy cariñoso y dormilon",
+    images: [ "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsV6_CWtxOuqdH_DULiJGq8ostLNiTr8ntTA&s","https://static.nationalgeographic.es/files/styles/image_3200/public/nationalgeographic_1468962.jpg?w=1600&h=900" ],
+    diseases: "N/A",
+    vaccines: "Rabia"
+  },
 ];
 
 export const FeedScreen = () => {
